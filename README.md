@@ -6,7 +6,7 @@ Practice hands-on session on Fast Api with xiaominions.
 - Simple Calculator App
 - Api Consumer
 
-1. A simple get api for getting information
+1. A simple get api for Greeting people.
 2. Post apis for calculation
 3. Git merge
 4. Local Deploy
