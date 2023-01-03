@@ -1,36 +1,32 @@
-from fastapi import FastAPI
-from typing import Union
-from pydantic import BaseModel
 from enum import Enum
+from typing import Union
+
+from fastapi import FastAPI
+from pydantic import BaseModel
 
 calc_app = FastAPI()
 
-class CalculatorOperation(str,Enum):
+
+class CalculatorOperation(str, Enum):
     add = "+"
     subtract = "-"
     multiply = "*"
     divide = "/"
 
+
 class CalculatorInput(BaseModel):
-    a:Union[float,int]
-    b:Union[float,int]
-    operation:CalculatorOperation
+    a: Union[float, int]
+    b: Union[float, int]
+    operation: CalculatorOperation
 
-def result(input: CalculatorInput):
-    match input.operation:
+
+def result(request: CalculatorInput):
+    match request.operation:
         case "+":
-            return input.a + input.b
+            return request.a + request.b
         case "-":
-            return input.a - input.b
+            return request.a - request.b
         case "*":
-            return input.a * input.b
+            return request.a * request.b
         case "/":
-            return input.a / input.b
-
-@calc_app.post("/calculator")
-def calculator(input: CalculatorInput):
-    try:
-        return result(input)
-    except Exception as err:
-        return {f"Unexpected {err}"}
-        raise
+            return request.a / request.b
