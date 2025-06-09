@@ -12,5 +12,7 @@ export default defineConfig({
       plugins: [tailwindcss()]
     },
 
-  integrations: [react(), icon()]
+  integrations: [react(), icon()],
+  output: "static",
+  base: "/fast_prac/"
 });
