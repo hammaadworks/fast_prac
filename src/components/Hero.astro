@@ -1,0 +1,68 @@
+---
+import {
+  BRIDE_GROOM,
+  BRIDE,
+  NIKAH_DATE_TIMESTAMP,
+  NIKAH_DATE_HIJRI,
+} from "@/lib/constants";
+import { format } from "date-fns";
+const formattedNikahDate =
+  format(NIKAH_DATE_TIMESTAMP, "EEEE, do MMMM yyyy") +
+  "<br />" +
+  NIKAH_DATE_HIJRI +
+  "<br />After Maghrib Salah, In-sha-Allah";
+
+import Countdown from "./Countdown.astro";
+import { IconCloud } from "./magicui/icon-cloud";
+import { SplashCursor } from "./ui/splash-cursor";
+---
+
+<section
+  class="relative w-full h-screen flex flex-col items-center justify-center text-center bg-gradient-to-b from-emerald-50 via-white to-emerald-100 overflow-hidden"
+>
+  <!-- Particle Background -->
+  <div id="particles-js" class="absolute inset-0 -z-10"></div>
+
+  <!-- Bismillah -->
+  <div class="text-2xl md:text-3xl font-serif text-emerald-800 mb-4">
+    بِسْمِ ٱللّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ
+  </div>
+
+  <!-- Names -->
+  <h1 class="text-4xl md:text-6xl font-bold text-gray-800">
+    {BRIDE_GROOM}
+  </h1>
+  <h2 class="text-3xl md:text-5xl font-medium text-emerald-600 mt-2">weds</h2>
+  <h1 class="text-4xl md:text-6xl font-bold text-gray-800 mb-6">
+    {BRIDE}
+  </h1>
+
+  <!-- Date -->
+  <p class="text-lg md:text-xl text-gray-600" set:html={formattedNikahDate} />
+
+  <!-- Countdown Timer -->
+  <div class="mt-4">
+    <Countdown />
+  </div>
+
+  <div
+    class="mt-6 relative flex size-full items-center justify-center overflow-hidden"
+  >
+    <IconCloud
+      client:load
+      images={Array(25).fill("https://emoji-cdn.mqrio.dev/❤️?style=google")}
+    />
+  </div>
+
+  <!-- Scroll Down Arrow -->
+  <a href="#venue" class="mt-10 animate-bounce text-emerald-700 text-xl">
+    ↓ Scroll to Venue
+  </a>
+</section>
+<SplashCursor client:visible />
+
+<!-- ParticleJS & Loader Scripts -->
+<script
+  src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"
+  defer></script>
+<script src="/particles-loader.js" defer></script>

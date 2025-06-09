@@ -1,0 +1,38 @@
+---
+import "../styles/global.css";
+// Component Imports
+import Hero from "../components/Hero.astro";
+import Venue from "../components/Venue.astro";
+import { Marquee } from "@/components/magicui/marquee";
+import { Globe } from "@/components/magicui/globe";
+import { SplashCursor } from "@/components/ui/splash-cursor";
+import { Connect } from "@/components/Highlight.js";
+// Full Astro Component Syntax:
+// https://docs.astro.build/basics/astro-components/
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>inamaryam</title>
+  </head>
+
+  <body>
+    <Hero client:load/>
+    <!-- <section class="flex justify-center items-center">
+      <Globe client:load className="my-200" />
+    </section> -->
+    <Venue client:load/>
+    <Marquee client:load >
+      <span>Next.js</span>
+      <span>React</span>
+      <span>TypeScript</span>
+      <span>Tailwind CSS</span>
+    </Marquee>
+
+    <Connect client:load />
+  </body>
+</html>
