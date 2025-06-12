@@ -6,7 +6,7 @@ import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
-  base: "/fast_prac/",
+  base: "/fast_prac",
   vite: {
       plugins: [tailwindcss()]
 	},
