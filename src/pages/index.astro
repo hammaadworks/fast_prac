@@ -1,0 +1,35 @@
+---
+import '../styles/global.css';
+import { FAQ } from '@/components/FAQ';
+import { ScrollProgress } from "@/components/magicui/scroll-progress";
+import { Connect } from "@/components/Connect";
+import { SplashCursor } from '@/components/ui/splash-cursor';
+import { BlessedNavBar } from '@/components/BlessedNavBar';
+import { VideoInvite } from '@/components/VideoInvite';
+import { VenueCard } from '@/components/VenueCard';
+import { NikahTimeline } from '@/components/NikahTimeline';
+import { NobleCause } from '@/components/NobleCause';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Blessed Nikah Website</title>
+  </head>
+
+  <body class="bg-background text-muted-text font-sans">
+    <ScrollProgress client:load />
+    <SplashCursor client:load />
+    <BlessedNavBar client:load />
+
+    <!-- <VideoInvite client:visible/> -->
+    <VenueCard client:load />
+    <NikahTimeline client:visible />
+    <NobleCause client:load />
+    <FAQ client:visible />
+    <Connect client:visible />
+  </body>
+</html>
