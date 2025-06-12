@@ -6,6 +6,9 @@ import { VenueCardComponent } from "./myui/venue-card-component";
 import HeadingSparkle from "./myui/heading-sparkle";
 
 export function VenueCard() {
+  const baseUrl = import.meta.env.BASE_URL;
+  const masjidImgurl = `${baseUrl}/img/masjid.webp`;
+  const hallImgUrl = `${baseUrl}img/hall.png`;
   return (
     <section className="w-full bg-slate-50 dark:bg-zinc-950 py-16 md:py-24 px-4 sm:px-6 md:px-8">
       <div className="mx-auto max-w-4xl text-center">
@@ -20,7 +23,7 @@ export function VenueCard() {
           venueAddress="Dickenson Road"
           eventDate="Thursday, 19th June 2025"
           eventTime="After Maghrib Salah"
-          venueImage="/img/masjid.webp"
+          venueImage={masjidImgurl}
           moreInfoLink="https://g.co/kgs/unsRJoW"
           directionsLink="https://maps.app.goo.gl/PFsZHCmXtZLzUF1D6"
           announcement="🤍 Keep us in your righteous duʿās 🤍"
@@ -33,7 +36,7 @@ export function VenueCard() {
           venueAddress="Kamraj Road"
           eventDate="Thursday, 19th June 2025"
           eventTime="8:00 PM onwards"
-          venueImage="/img/hall.png"
+          venueImage={hallImgUrl}
           moreInfoLink="https://g.co/kgs/FQyPGmy"
           directionsLink="https://maps.app.goo.gl/Ar59os8sC4SLEAPu5"
           announcement="🎉 Celebration Begins • Free Parking for All!"
