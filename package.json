@@ -6,7 +6,8 @@
     "dev": "astro dev --host",
     "build": "astro build",
     "preview": "astro preview",
-    "deploy": "astro build && gh-pages -d dist",
+    "deploy": "gh-pages -d dist",
+    "publish": "astro build && gh-pages -d dist",
     "astro": "astro"
   },
   "dependencies": {
