@@ -11,8 +11,8 @@ const __dirname = dirname(__filename);
 
 // https://astro.build/config
 export default defineConfig({
-  base: "/fast_prac/",
-  site: "https://hammaadworks.github.io",
+  // base: "/fast_prac/",
+  // site: "https://hammaadworks.github.io",
   vite: {
     resolve: {
       alias: {
