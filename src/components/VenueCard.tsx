@@ -1,7 +1,5 @@
 "use client";
 
-import { SparklesText } from "./magicui/sparkles-text";
-import { CoolMode } from "./magicui/cool-mode";
 import { VenueCardComponent } from "./myui/venue-card-component";
 import HeadingSparkle from "./myui/heading-sparkle";
 
